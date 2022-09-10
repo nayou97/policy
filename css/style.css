@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px/1.6 'Noto Sans KR', sans-serif;
+    color: #222328;
+    background: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #222328;
+}
+
+.hidden {
+    height: 0;
+    overflow: hidden;
+}
+
+.ir_pm {
+    text-indent: -9999px;
+    overflow: hidden;
+    display: block;
+}
+
+#wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contentWrap {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* header style */
+
+header {
+    width: 100%;
+    height: 100px;
+    background: #fff;
+}
+
+header .contentWrap {
+    position: relative;
+}
+
+header h1 {
+    float: left;
+    width: 137px;
+    height: 100%;
+}
+
+header h1 a {
+    background: url(../images/logo.png) no-repeat 0 center;
+}
+
+nav {
+    position: absolute;
+    width: 60%;
+    height: 80px;
+    bottom: 0px;
+    left: 200px;
+}
+
+nav ul li {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav ul li a {
+    line-height: 75px
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+nav ul li a:focus {
+    color: orange;
+    border-bottom: 5px solid orange;
+}
+
+header .login {
+    float: right;
+    width: 50px;
+    height: 100px;
+    background: url(../images/ico_top_login.png) no-repeat 0 65%; /* login button, 65%는 상단 바 내에서 위 아래 위치를 조정해준다 */
+}
+
+.subMenuWrap {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 210px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.subMenuWrap .contentWrap {
+    position: relative;
+}
+
+.subMenuWrap .contentWrap .subMenu {
+    position: absolute;
+    left: 200px;
+    width: 60%;
+    overflow: auto;
+}
+
+.subMenu ul {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.subMenu ul:first-child {
+    margin-left: 20%;
+}
+
+.subMenu ul li {
+    padding: 10px 0;
+}
+
+.subMenu ul li:first-child {
+    padding-top: 20px;
+}
+
+.subMenu ul li a:hover {
+    color: orange;
+}
+
+.containerWrap {
+    position: relative;
+}
+
+/* section style */
+section {
+    width: 100%;
+    overflow: auto;
+    min-width: 1200px;
+}
+
+#slide {
+    height: 500px;
+    z-index: 100;
+}
+
+#slide a {
+    animation: slide 10s infinite;
+}
+
+@keyframes slide {
+    0% {
+        background: url(../images/slide1.jpg)no-repeat center/cover;
+    }
+
+    50% {
+        background: url(../images/slide2.jpg)no-repeat center/cover;
+    }
+
+    100% {
+        background: url(../images/slide1.jpg)no-repeat center/cover;
+    }
+}
+
+.searchWrap {
+	width: 100%;
+    min-width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: absolute;
+    z-index: 100;
+    background: none;
+}
+
+.search {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 100px;
+    background: #fff;
+    box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 10%);
+    z-index: 10;
+}
+
+.search .searchTxt {
+    width: 80%;
+}
+
+.search .searchTxt .mainTxt {
+    float: left;
+    padding-left: 170px;
+    line-height: 100px;
+}
+
+.search .searchTxt .mainTxt::before {
+    position: absolute;
+    display: block;
+    content: "";
+    left: 50px;
+    width: 83px;
+    height: 100px;
+    background: url(../images/main_top.png) no-repeat 0 12px; /* /2000px 2000px; 뺐다. 맨 왼쪽 사람 아이콘 */
+} 
+
+
+
+
+
+
+.search .searchTxt .checks {
+    float: left;
+    height: 100px;
+    line-height: 100px;
+    margin-left: 50px;
+}
+
+.search .searchTxt .checks label {
+    margin-left: 10px;
+}
+
+
+/*
+checkbox  https://blogpack.tistory.com/811
+ 
+.checks {
+    position: relative; 나열 
+}
+
+
+.checks input[type="radio"] {
+    
+    position: absolute; / display: none; 
+    width: 0px;
+    height: 0px;
+    padding: 0;
+    margin: 0px;
+    overflow: hidden;
+    
+
+}
+
+ 체크안된 상태에 배경넣기 
+.checks input[type="radio"] + label {
+    display: inline-block; / * 영역적용가능해짐 * /
+    width: 17px; height: 17px;
+    background: #fa3062;
+
+ 
+    cursor: pointer;  / * 마우스 올렸을때 손모양 처리 * /
+    border-radius: 3px; float: right;
+
+    
+    padding-left: 30px;
+    position: relative; top:  4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    
+}
+
+
+.checks :after {
+    display: block; clear: both; content: "";
+
+}
+
+
+/ * 4. 체크된 상태에 배경넣기 * / 
+
+.checks input[type="radio"]:checked + label {
+
+    background: url(../images/check.png) #fa3062 no-repeat center/10px 10px; float: right;
+
+}
+
+
+/ * 5. span안에 내용 위치 이동 * / 
+
+.checks {position: relative;}
+.checks input[type="radio"] + label span{
+    position: absolute; top: 0px; left: 0px; display: block; font-weight: bold;
+}
+
+*/
+
+
+/* 출처 : https://blogpack.tistory.com/876 */
+
+.checks input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background: url(../images/check.png) no-repeat;
+}
+
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before {
+    background: background: url(../images/check.png) no-repeat;
+}
+
+.checks input[type="checkbox"]:checked + label:before {
+    background: url(../images/check.png) no-repeat;  
+    /* 원래 main_bg_set */
+}
+
+
+/*
+no-repeat -103px -830px/2000px 2000px;
+no-repeat -103px -900px/2000px 2000px;
+ no-repeat -103px -854px/2000px 2000px;
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+.search .searchBtn {
+    float: right;
+    width: 20%;
+    background: #000;
+}
+
+.search .searchBtn a {
+    
+    color: #fff;
+    line-height: 100px;
+}
+
+.search .searchBtn a::before {
+    float: left;
+    display: block;
+    content: "";
+    width: 36px;
+    height: 36px;
+    margin: 35px 10px 0 20px; /* 이 설정으로 위치를 조정해준다. */
+    background: url(../images/search.png) no-repeat; /* 설정 지정 no */
+}
+
+.popupWrap {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 998;
+}
+
+.popupWrap .popupContent {
+    position: absolute;
+    width: 30%;
+    min-width: 400px;
+    height: 370px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.popupWrap .popupContent .close {
+    position: relative;
+    float: right;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.popupWrap .popupContent .close span {
+    top: 24px;
+}
+
+.popupWrap .popupContent .close span,
+.popupWrap .popupContent .close span::before {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #222;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.popupWrap .popupContent .close span::before {
+    content: "";
+    transform: rotate(90deg);
+}
+
+.popupWrap .popupContent .popupTxt {
+    position: absolute;
+    top: 55%; left: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+}
+
+.popupWrap .popupContent h3 {
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 1.7em;
+}
+
+.popupWrap .popupContent p {
+    color: #999;
+    margin-bottom: 50px;
+}
+
+.popupWrap .popupContent .next {
+    width: 180px;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+#info {
+    position: relative;
+    background: #f0f0f0;
+    padding: 150px 0;
+    z-index: 0;
+}
+
+#info > .contentWrap > p {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+#info ul li {
+    float: left; /* 왼쪽방향으로 한줄로 만들고 정렬 */
+    width: 30%;
+    margin-right: 5%;
+    background: #fff;
+    padding: 55px 10px; /* 흰색 콘텐츠 박스 크기 */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#info ul li a span {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 50px; /* 위아래왼오른쪽 모두 0 이고, 아래만 특별히 줄 간격50 */
+}
+
+#info ul li:nth-child(1) span {
+    background: url(../images/main_1.png) no-repeat right 5px;
+}
+
+#info ul li:nth-child(2) span {
+    background: url(../images/main_2.png) no-repeat right 5px;
+}
+
+#info ul li:nth-child(3) {
+    margin-right: 0; /* 이거 안 하면 줄바꿈 처리된다 */
+}
+
+#info ul li:nth-child(3) span {
+    background: url(../images/main_3.png) no-repeat right 5px;
+}
+
+ 
+ /* -103px -830px/2000px 2000px */
+
+
+#info ul li a h3 {
+    font-size: 1.6em;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+
+
+
+#community {
+    padding: 100px 0; /* 고객센터 위에 빈 공간 */
+}
+
+#community .contentWrap > div {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+
+#community .contentWrap > div:last-child {
+    margin-right: 0;
+}
+
+#community .contentWrap > div h3 {
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1em;
+    margin-bottom: 20px;
+}
+
+#community .custommer h3 span {
+    font-size: 0.8em;
+}
+
+#community .custommer .TxcoGr {
+    color: #2bc9a6;
+    font-size: 1.4em;
+    margin-bottom: 15px; /* 내일채움공제 - 평일 오전 <<< 이 사이 줄 간격 */
+}
+
+#community .custommer p:last-child {
+    line-height: 10px;
+}
+
+#community .custommer p:last-child::before {
+    width: 30px;
+    height: 30px;
+    display: block;
+    content: "";
+    float: left;
+    margin-right: 10px; /* 옆 글자와의 간격 */
+    background: url(../images/ico_footer_call.png) no-repeat;
+}
+
+#community .notice {
+}
+
+#community .notice h3 {
+    position: relative;
+    text-align: center;
+}
+
+#community .notice h3::after {
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-45%);
+    width: 25px;
+    height: 25px;
+    display: block;
+    content: "+";
+    color: #555;
+    font-size: 0.6em;
+    line-height: 23px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#community .notice ul {
+    float: left;
+    width: 100%;
+}
+
+#community .notice ul li {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+#community .notice ul li a p {
+    float: left;
+}
+
+#community .notice ul li a p:first-child {
+    width: 20%;
+}
+
+#community .notice ul li a p:last-child {
+    width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#community .popup img {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    min-width: 1200px;
+    background: #e0e0e0;
+    padding: 40px 0;
+    overflow: auto;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 20px;
+}
+
+footer ul li:first-child {
+    margin-left: 0;
+}
+
+footer ul li:first-child a {
+    color: #cf4545;
+}
